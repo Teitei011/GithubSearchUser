@@ -22,7 +22,7 @@ const Bar3D = ({data}) =>{
     dataFormat: "json",
     dataSource: {
       chart: {
-        caption: "Most Forked",
+        caption: "Most Forks",
         xAxisName: "Forks",
         yAxisName: "Repos",
         yAxisFontSize: "16px",

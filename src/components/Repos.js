@@ -47,7 +47,7 @@ const Repos = () => {
     (total, item) => {
       const { stargazers_count, name, forks } = item;
       total.stars[stargazers_count] = { label: name, value: stargazers_count };
-      total.stars[forks] = { label: name, value: forks };
+      total.forks[forks] = { label: name, value: forks };
       
       return total;
     },
@@ -56,6 +56,7 @@ const Repos = () => {
 
   stars = Object.values(stars).slice(-5).reverse();
   forks = Object.values(forks).slice(-5).reverse();
+  console.log(`Forks: ${forks}`);
 
  
   return (
