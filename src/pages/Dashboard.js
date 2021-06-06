@@ -17,7 +17,6 @@ if(isLoading){
 
   return (
     <main>
-      <Navbar></Navbar>
       <Search />
       <Info />
       <User />
