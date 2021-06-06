@@ -1,43 +1,26 @@
-import FusionCharts from "fusioncharts";
-import charts from "fusioncharts/fusioncharts.charts";
-import ReactFusioncharts from "react-fusioncharts";
+import { Bar, Line } from "react-chartjs-2";
 import React from "react";
-import Chart from "fusioncharts/fusioncharts.charts";
 
+const Bar3D = ({ data }) => {
 
-import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
-
-// Resolves charts dependancy
-charts(FusionCharts);
-
-ReactFusioncharts.fcRoot(FusionCharts, Chart, FusionTheme);
-
-
-
-const Bar3D = ({data}) =>{
-  const chartConfigs = {
-    type: "bar3d",
-    width: "100%",
-    heigth: "400",
-    dataFormat: "json",
-    dataSource: {
-      chart: {
-        caption: "Most Forks",
-        xAxisName: "Forks",
-        yAxisName: "Repos",
-        yAxisFontSize: "16px",
-        xAxisFontSize: "16px",
-        theme:"candy",
+  const dados = {
+    labels: data.labels,
+    datasets: [
+      {
+        borderColor: "rgba(255,99,132,1)",
+        borderWidth: 1,
+        hoverBackgroundColor: "rgba(255,99,132,0.4)",
+        hoverBorderColor: "rgba(255,99,132,1)",
+        data: data.data,
       },
-      data
-     }
-  }
+    ],
+  };
 
-  
   return (
-    <ReactFusioncharts {...chartConfigs}
-    /> );
-}
-
-
+    <div>
+      <h4> "Most Forks",</h4>
+      <Bar data={dados} width={100} height={50} />
+    </div>
+  );
+};
 export default Bar3D;
